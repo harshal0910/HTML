@@ -1,0 +1,46 @@
+<html>
+    <header><title>Feedback</title></header>
+    <head>
+        <h1>Feedback Form</h1>
+        <style>
+            .mandatory{
+                color: red; 
+                
+            }
+            /* input{
+                width: 20%;
+            } */
+        </style>
+    </head>
+    <body>
+        <p>Please provide your feedback on any problems or difficulties you faced while purchasing items on our sports website.</p>
+
+        <form action="feebackform" method="post" style="font-size: medium;">
+            Type of problem:<span class="mandatory">*</span><br>
+            <select id="problem_type" name="problem_type">
+                <option value="Technical">Technical</option>
+                <option value="product">product do not available</option>
+                <option value="information">missing information of product</option>
+            </select><br><br>
+
+            Username:<span class="mandatory">*</span><br>
+            <input type="text" required><br><br>
+
+            Email:<span class="mandatory">*</span><br>
+            <input type="text" required><br><br>
+
+            Location:<span class="mandatory">*</span><br>
+            <input type="text" required><br><br>
+
+            Phone:<br>
+            <input type="text" style="width:10%"><br><br>
+
+            Description of problem:<span class="mandatory">*</span><br>
+            <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+            <!-- <input type="checkbox"> -->
+            <input type="checkbox" id="problem_solved" name="problem_solved"><label for="problem_solved">Notification of Problem Solved:</label><br><br>
+            <button type="submit">Submit</button>
+    </form>
+    </body>
+</html>
