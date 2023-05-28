@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            arr=[3,10,28,9];
+            arr1=new Array(3,10,17,15,25,"asd");
+            arr2=[arr,arr1];    //array of size 2
+            arr3=[...arr,...arr1];  //array of size 4+6 -->siz od arr + size if arr1
+            console.log(arr2);
+            console.log(arr3);
+
+            //destructuring of the array
+            var[h,a,r,s]=arr;
+            console.log(h,a,r,s);
+
+            var[a,,b,c,d,e=28]=arr;
+            console.log(a,b,c,d,e);
+
+            let[s1,f]=arr;
+            console.log(s1,f);
+            let[,,s,,t]=arr2;
+        </script>
+    </body>
+</html>
