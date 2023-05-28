@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <script>
+            arr=[3,10,9,28,17,18,7];
+            arr.sort();//it will sort based on ascii value
+            document.write("sorted array: "+arr+"<br>");
+            function compare(a,b){
+                return a-b;
+            }
+            arr.sort(compare);
+            document.write("soreted array:"+arr+"<br>");
+            arr.sort((a,b)=>a-b);
+            
+            arr=[1,10,20,34,555,100,8];
+            p=arr.findIndex(a=>a>5);    //1
+            document.write(p+"<br>");   //10
+            
+            val=arr.find(a=>a>5);
+            document.write(val+"<br>");
+            
+            arr2=arr.filter(a=>a>5&&a%5==0);
+            document.write(arr2+"<br>");
+            
+            //map each value of array to its square
+            arr2=arr.map(a=>a*a);
+            document.write("mapped array: "+arr2+"<br>");
+            // document.write("mapped array:"+aar2);
+            //reduce function
+            s=arr.reduce((acc,num)=>acc+num);
+            document.write("reduce to sum of array:"+arr2+"<br>");
+
+        </script>
+    </body>
+</html>
