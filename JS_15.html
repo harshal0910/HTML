@@ -1,0 +1,90 @@
+<html>
+    <script>
+        function rectangle(length,breadth)
+        {
+            this.length=length;
+            this.breadth=breadth;
+
+            this.arearec=function(){
+                var a=this.length*this.breadth
+                //document.getElementById("mydiv").innerHTML=a;
+                return a;
+            };
+            
+            this.perimeter=function(){
+                return 2*(this.length+this.breadth);
+            };
+        }
+
+        function circle(radius1){
+            this.radius1=radius1;
+
+            this.areacir=function(){
+                return 3.14*this.radius1*this.radius1;
+            };
+            this.circumferencecir=function(){
+                return 2*3.14*this.radius1;
+            };
+            
+        }
+        function validateNum(num,err){
+            if(num<1){
+                document.getElementById(err).innerHTML="Invalid number";
+                return false;
+            }
+            else{
+                document.getElementById(err).innerHTML="";
+                return true;
+            }
+        }
+        function areaandperimretanlge(){
+            var len1=parseFloat(document.getElementById("len").value);
+            var brd1=parseFloat(document.getElementById("brd").value);
+
+            var flag1=validateNum(len1,"err1");
+            var flag2=validateNum(brd1,"err2");
+            // console.log("asd")
+            if(flag1&&flag2){
+                
+               var r1=new rectangle(len1,brd1);
+                var arearec2=r1.arearec();
+                //alert("sss");
+               var peri=r1.perimeter(); document.getElementById("mydiv").innerHTML="Area of rectangle="+arearec2+" perimeter of rectangle="+peri;
+            }
+        }
+
+        function areaandcircumcircle(){
+            var rad=parseFloat(document.getElementById("radius").value);
+           // alert("sss");
+           alert(rad);
+            var flag3=validateNum(rad,"err3");
+            if(flag3){
+                alert("sss");
+                var c1=new circle(rad);
+                var ar=c1.areacir();
+                alert(ar);
+                var ci=c1.circumferencecir();
+                document.getElementById("mydiv2").innerHTML="Area of circle="+ar+" circumference of circle= "+ci;
+            }
+        }
+    </script>
+    <body>
+        
+
+        <form>
+            <label>Rectangle</label><br>
+            Length:<input type="text" name="len" id="len"><span>*</span><span id="err1"></span><br>
+            Breadth:<input type="text" name="brd" id="brd"><span>*</span><span id="err2"></span><br>
+
+            <button type="button" id="area1" name="area1" value="area1" onclick="areaandperimretanlge()">Area and perimeter of rectangle</button><br><br>
+         
+            
+            <label>Circle</label><br>
+            Radius:<input type="text" name="radius" id="radius"><span>*</span><span id="err3"></span><br>
+            <button type="button" name="circle" id="circle" value="circle" onclick="areaandcircumcircle()">Area and Circumference of Circle</button>
+        </form>
+        <div id="mydiv"></div>
+        <div id="mydiv2"></div>
+        
+    </body>
+</html>
